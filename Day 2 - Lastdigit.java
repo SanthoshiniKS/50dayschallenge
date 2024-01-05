@@ -6,13 +6,11 @@ class Solution {
             return 1;
         if(a.length()==1 && a.charAt(0)=='0')
             return 0;
-        int mod = 0,exp=0;
+        int exp=0;
         for(int i=0;i<b.length();i++)
-            mod=(mod*10+b.charAt(i)-'0')%4;
-        if(mod==0)
+            exp=(exp*10+b.charAt(i)-'0')%4;
+        if(exp==0)
            exp=4;
-        else
-           exp=mod;
         int base=a.charAt(a.length()-1)-'0';
         int res=(int)Math.pow(base,exp);
         return res%10;
