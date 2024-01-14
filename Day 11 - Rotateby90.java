@@ -1,8 +1,8 @@
-class GFG
+class Solution
 {
-    static void rotate(int matrix[][]) 
+    //Function to rotate matrix anticlockwise by 90 degrees.
+    static void rotateby90(int matrix[][], int n) 
     {
-        int n=matrix.length;
         for(int i=0;i<n;i++){     
             for(int j=0;j<i;j++)
             {
