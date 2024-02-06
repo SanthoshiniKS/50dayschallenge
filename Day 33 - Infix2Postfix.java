@@ -6,7 +6,7 @@ class Solution {
         Stack<Character> s=new Stack<>();
         for(int i=0;i<exp.length();i++){
             char c=exp.charAt(i);
-            if((c>='A' && c<='Z') || (c>='a' && c<='z') || (c>=0 && c<=9)){
+            if((c>='A' && c<='Z') || (c>='a' && c<='z') || (c>='0' && c<='9')){
                 res=res+c;
             }
             else if(c=='(')
