@@ -19,12 +19,9 @@ class Solution {
                 s.pop();
             }
             else{
-                if(!s.isEmpty() && checkpri(s.peek())<checkpri(c)) s.push(c);
-                else{
-                    while(!s.isEmpty() && checkpri(c)<=checkpri(s.peek()))
-                         res=res+s.pop();
-                    s.push(c);
-                }
+                while(!s.isEmpty() && checkpri(c)<=checkpri(s.peek()))
+                     res=res+s.pop();
+                s.push(c);
             }
         }
             while(!s.isEmpty())
@@ -32,12 +29,12 @@ class Solution {
         return res;
     }
     public static int checkpri(char c){
-        if(c=='^')
-             return 3;
+        if(c=='+'||c=='-')
+             return 1;
         else if(c=='*'||c=='/')
              return 2;
-        else if(c=='+'||c=='-')
-             return 1;
+        else if(c=='^')
+             return 3;
         return 0;
     }
 }
