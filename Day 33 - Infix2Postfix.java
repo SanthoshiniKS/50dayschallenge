@@ -6,14 +6,16 @@ class Solution {
         Stack<Character> s=new Stack<>();
         for(int i=0;i<exp.length();i++){
             char c=exp.charAt(i);
-            if((c>='A' && c<='Z') || (c>='a' && c<='z') || (c>='0' && c<='9')){
+            if((c>='A' && c<='Z') || (c>='a' && c<='z') || (c-'0'>=0 && c-'0'<=9)){
                 res=res+c;
             }
             else if(c=='(')
                s.push(c);
             else if(c==')'){
-                while(!s.isEmpty() && s.peek()!='(')
-                    res=res+s.pop();
+                while(!s.isEmpty() && s.peek()!='('){
+                    res=res+s.peek();
+                    s.pop();
+                }
                 s.pop();
             }
             else{
